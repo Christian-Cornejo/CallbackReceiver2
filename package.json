@@ -17,13 +17,13 @@
   },
   "name": "callbackreceiver",
   "version": "1.0.0",
-  "main": "app.ts",
+  "main": "build/app.js",
   "scripts": {
-    "start": "node app.ts",
-    "dev": "nodemon app.ts"
+    "tsc" : "tsc",
+    "start": "node build/app.js",
+    "dev": "nodemon build/app.js"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
-  "type": "module"
+  "description": ""
 }
