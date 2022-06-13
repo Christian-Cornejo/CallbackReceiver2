@@ -9,6 +9,7 @@ const config_1 = __importDefault(require("./config/config"));
 const logging_1 = __importDefault(require("./config/logging"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const callback_1 = __importDefault(require("./routes/callback"));
+const merchant_1 = __importDefault(require("./routes/merchant"));
 const NAMESPACE = 'Server';
 const router = (0, express_1.default)();
 /** Log the request */
@@ -36,6 +37,7 @@ router.use((req, res, next) => {
 });
 /** Routes go here */
 router.use('/api/callback', callback_1.default);
+router.use('/api/merchant', merchant_1.default);
 /** Error handling */
 router.use((req, res, next) => {
     const error = new Error('Not found');

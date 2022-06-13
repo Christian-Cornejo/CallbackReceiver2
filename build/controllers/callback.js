@@ -41,10 +41,15 @@ const callbackReceiver = (req, res, next) => __awaiter(void 0, void 0, void 0, f
     })
         .catch(function (err) {
         logging_1.default.info(NAMESPACE, "Error");
-        return res.status(200).json({
+        return res.status(501).json({
             message: err,
             err
         });
     });
 });
-exports.default = { callbackReceiver };
+const merchantReceiver = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    return res.status(200).json({
+        message: "Successfully Received."
+    });
+});
+exports.default = { callbackReceiver, merchantReceiver };

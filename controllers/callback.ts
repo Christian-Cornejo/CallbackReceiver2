@@ -34,11 +34,17 @@ const callbackReceiver = async (req: Request, res: Response, next: NextFunction)
     })
     .catch(function (err) {
         logging.info(NAMESPACE, "Error");
-        return res.status(200).json({
+        return res.status(501).json({
             message: err,
             err
         });
     });
 };
 
-export default { callbackReceiver };
+const merchantReceiver = async (req: Request, res: Response, next: NextFunction) => {
+    return res.status(200).json({
+        message: "Successfully Received."
+    });
+};
+
+export default { callbackReceiver, merchantReceiver };

@@ -3,7 +3,8 @@ import express from "express";
 import config from './config/config';
 import logging from './config/logging';
 import bodyParser from 'body-parser';
-import postRoutes from './routes/callback';
+import callbackRoutes from './routes/callback';
+import merchantRoutes from './routes/merchant';
 
 const NAMESPACE = 'Server';
 const router = express();
@@ -40,7 +41,8 @@ router.use((req, res, next) => {
 
 
 /** Routes go here */
-router.use('/api/callback', postRoutes);
+router.use('/api/callback', callbackRoutes);
+router.use('/api/merchant', merchantRoutes);
 
 /** Error handling */
 router.use((req, res, next) => {
